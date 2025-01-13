@@ -53,14 +53,111 @@ function logName(obj: {first: string, last?: string}){
     }
 }
 
-function printId(id: number | string){
-    if (typeOf id === "string"){
-        console.log( id.toUpperCase())
-    } else {
-        console.log("your id id " + id)
-    }
+// function printId(id: number | string){
+//     if (typeOf id === "string"){
+//         console.log( id.toUpperCase())
+//     } else {
+//         console.log("your id id " + id)
+//     }
  
+// }
+
+// printId(101)
+// printId("abc")
+
+
+function welcomePeople(x: string[] | string){
+    if(Array.isArray(x)){
+        console.log("hello," + x.join(" and "))
+    } else {
+        console.log("welcome lone traveler" + x)
+    }
 }
 
-printId(101)
-printId("abc")
+
+type point = {
+    x: number
+    y: number
+}
+
+function printCord(pt: point){
+    console.log("the cordinate x value is"+ pt.x)
+    console.log("the cordinate y value is" + pt.y)
+}
+
+printCord({x:3,y:7})
+
+
+type Id = number | string
+
+
+// interface point2 = {
+//     x: number;
+//     y: number;
+// }
+
+function printCord(pt: point2){
+    console.log("the cordinate x value is " + pt.x)
+}
+
+
+interface Animal {
+    name: string
+}
+
+interface bear extends Animal {
+    honey: boolean
+}
+
+const bear: bear = getBear()
+bear.name
+bear.honey
+
+
+type  Animal2 = {
+    name: string
+} 
+
+type bear2  = Animal & {
+    honey : boolean
+}
+
+
+const bear2 = getBear2()
+bear2.name
+bear2.honey
+
+
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement
+
+
+
+let x: "hello" = "hello"
+x = "hello"
+
+x  = "howdy"
+
+function printText(s: string, alignment: "left" | "right" | "center") {
+    console.log(s,alignment)
+}
+
+printText("hello","left")
+printText(`g'day,mate`,"center")
+
+
+function compare(a: string, b: string): -1|0|1{
+    return a === b ? 0 : a > b ? 1 : -1
+}
+
+console.log(compare("a","b"))
+
+
+interface option {
+    width: number
+}
+
+function configure(x: option | "auto"){
+    console.log(x)
+}
+
+configure({width})
