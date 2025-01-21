@@ -1,56 +1,51 @@
-console.log("hello world")
+console.log("hello world");
 
-function greet(person : string,date: Date){
-    console.log(`my name is ${person}, today is ${date.toDateString()}`)
+function greet(person: string, date: Date) {
+  console.log(`my name is ${person}, today is ${date.toDateString()}`);
 }
 
-greet("wisdom", new Date())
+greet("wisdom", new Date());
 
-let object: any = { x : 0}
+let object: any = { x: 0 };
 
-object.foo()
-object()
-object.bar = 100
-object  = "hello"
+object.foo();
+object();
+object.bar = 100;
+object = "hello";
 
-
-let myName: string = "wisdom"
-
+let myName: string = "wisdom";
 
 // function greet2(name:string){
 //     console.log("hello" + name.toUpperCase() + "!")
 // }
-
 // greet2(42)
 
-function getFvoriteNumber(): number{
-    return 26
+function getFvoriteNumber(): number {
+  return 26;
 }
 
-let names = ["tobi","pilo","excel"]
+let names = ["tobi", "pilo", "excel"];
 
-names.forEach(function(s) {
-    console.log(s.toUpperCase())
-})
+names.forEach(function (s) {
+  console.log(s.toUpperCase());
+});
 
 names.forEach((s) => {
-    console.log(s.toUpperCase())
-})
+  console.log(s.toUpperCase());
+});
 
-
-function printcord(pt: {x:number,y:number}){
-    console.log("the coordinante x value is" + pt.x)
-    console.log("the coordinate y vlue is " + pt.y)
+function printcord(pt: { x: number; y: number }) {
+  console.log("the coordinante x value is" + pt.x);
+  console.log("the coordinate y vlue is " + pt.y);
 }
 
-printcord({x:3,y:7})
+printcord({ x: 3, y: 7 });
 
-
-function logName(obj: {first: string, last?: string}){
-    console.log(obj.first)
-    if(obj.last !== undefined){
-        console.log(obj.last)
-    }
+function logName(obj: { first: string; last?: string }) {
+  console.log(obj.first);
+  if (obj.last !== undefined) {
+    console.log(obj.last);
+  }
 }
 
 // function printId(id: number | string){
@@ -59,105 +54,351 @@ function logName(obj: {first: string, last?: string}){
 //     } else {
 //         console.log("your id id " + id)
 //     }
- 
 // }
-
 // printId(101)
 // printId("abc")
 
-
-function welcomePeople(x: string[] | string){
-    if(Array.isArray(x)){
-        console.log("hello," + x.join(" and "))
-    } else {
-        console.log("welcome lone traveler" + x)
-    }
+function welcomePeople(x: string[] | string) {
+  if (Array.isArray(x)) {
+    console.log("hello," + x.join(" and "));
+  } else {
+    console.log("welcome lone traveler" + x);
+  }
 }
-
 
 type point = {
-    x: number
-    y: number
+  x: number;
+  y: number;
+};
+
+function printCord(pt: point) {
+  console.log("the cordinate x value is" + pt.x);
+  console.log("the cordinate y value is" + pt.y);
 }
 
-function printCord(pt: point){
-    console.log("the cordinate x value is"+ pt.x)
-    console.log("the cordinate y value is" + pt.y)
-}
+printCord({ x: 3, y: 7 });
 
-printCord({x:3,y:7})
-
-
-type Id = number | string
-
+type Id = number | string;
 
 // interface point2 = {
 //     x: number;
 //     y: number;
 // }
 
-function printCord(pt: point2){
-    console.log("the cordinate x value is " + pt.x)
+function printCord(pt: point2) {
+  console.log("the cordinate x value is " + pt.x);
 }
 
-
 interface Animal {
-    name: string
+  name: string;
 }
 
 interface bear extends Animal {
-    honey: boolean
+  honey: boolean;
 }
 
-const bear: bear = getBear()
-bear.name
-bear.honey
+const bear: bear = getBear();
+bear.name;
+bear.honey;
 
+type Animal2 = {
+  name: string;
+};
 
-type  Animal2 = {
-    name: string
-} 
+type bear2 = Animal & {
+  honey: boolean;
+};
 
-type bear2  = Animal & {
-    honey : boolean
-}
+const bear2 = getBear2();
+bear2.name;
+bear2.honey;
 
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 
-const bear2 = getBear2()
-bear2.name
-bear2.honey
+let x: "hello" = "hello";
+x = "hello";
 
-
-const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement
-
-
-
-let x: "hello" = "hello"
-x = "hello"
-
-x  = "howdy"
+x = "howdy";
 
 function printText(s: string, alignment: "left" | "right" | "center") {
-    console.log(s,alignment)
+  console.log(s, alignment);
 }
 
-printText("hello","left")
-printText(`g'day,mate`,"center")
+printText("hello", "left");
+printText(`g'day,mate`, "center");
 
-
-function compare(a: string, b: string): -1|0|1{
-    return a === b ? 0 : a > b ? 1 : -1
+function compare(a: string, b: string): -1 | 0 | 1 {
+  return a === b ? 0 : a > b ? 1 : -1;
 }
 
-console.log(compare("a","b"))
-
+console.log(compare("a", "b"));
 
 interface option {
-    width: number
+  width: number;
 }
 
-function configure(x: option | "auto"){
+function configure(x: option | "auto") {
+  console.log(x);
+}
+
+configure({ width });
+
+function doSomething(x: string | null) {
+  if (x === null) {
+    console.log("this is an error");
+  } else {
+    console.log("hello", +x.toUpperCase());
+  }
+}
+
+function liveDangerously(x: string | null) {
+  console.log(x!.toFixed());
+}
+
+const oneHundred: bigInt = BigInt(100);
+
+const anotherHundred: bigInt = 100n;
+
+// const firstName = symbol("name")
+// const secondName = symbol("name")
+
+// if(firstName === secondName) {
+
+// }
+
+// function padLeft(padding: number  | string, input: string): string{
+// if(padding === "number"){
+//    return "".repeat(padding) + input;
+// }
+// return padding + input;
+// }
+
+// function printAll(strs: string | string[] | null){
+
+// if(typeof strs === "object"){
+//     for(const s of strs){
+//         console.log(s)
+//     }
+// } else if (typeof strs === "string"){
+//     console.log(strs)
+// } else{
+//     return
+// }
+
+// }
+
+function getusersOnlineMessage(numUsersOnine: number) {
+  if (numUsersOnine === 0) {
+    return `we have ${numUsersOnine} users onine now`;
+  } else {
+    ("nobody's here :(");
+  }
+}
+
+function printAll(strs: string | string[] | null) {
+  if (strs && typeof strs === "object") {
+    for (const s of strs) {
+      console.log(s);
+    }
+  } else if (typeof strs === "string") {
+    console.log(strs);
+  }
+}
+
+function multiplyAll(
+  values: number[] | undefined,
+  factors: number
+): number[] | undefined {
+  if (!value) {
+    return values;
+  } else {
+    return values.map((x) => x * factors);
+  }
+}
+
+function example(x: string | number, y: string | boolean) {
+  if (x === y) {
+    x.toUpperCase();
+    y.toUpperCase();
+  } else {
+    console.log(x);
+    console.log(y);
+  }
+}
+
+function PrintAll(strs: string | string[] | null) {
+  if (strs === null) {
+    if (typeof strs === "object") {
+      for (const s of strs) {
+        console.log(s);
+      }
+    }
+  } else if (typeof strs === "string") {
+    console.log(strs);
+  }
+}
+
+interface container {
+  value: number | null | undefined;
+}
+
+function multiplyValue(container: container, factor: number) {
+  if (container.value !== null) {
+    console.log(container.value);
+
+    container.value *= factor;
+  }
+}
+
+type fish = { swim: () => void };
+type bird = { fly: () => void };
+type human = { swim: () => void; fly: () => void };
+
+function move(animal: fish | bird | human) {
+  if ("swim" in animal) {
+    return animal.swim();
+  } else {
+    return animal.fly();
+  }
+}
+
+
+function logValue(x: Date | string) {
+if(x instanceof Date){
+  console.log(x.toUTCString())
+}
+}
+
+
+let x = Math.random() < 0.5 ? 10 : "hello world";
+
+x = 1
+
+console.log(x)
+
+x = "hello world"
+
+console.log(x)
+
+
+
+function padLeft(padding: number | string, input: string) {
+  if(typeof padding === "number"){
+    return new Array(padding + 1).join("") + input;
+  }
+  return padding + input;
+}
+
+
+function example() {
+  let x: string | number | boolean
+
+  x = Math.random() < 0.5;
+  if( Math.random() < 0.5) {
+    x = "hello";
     console.log(x)
+  } else {
+    x = 100;
+    console.log(x)
+  }
+return x;
 }
 
-configure({width})
+// function isFish(pet: fish | bird): pet is fish {
+// return (pet as fish).swim !== undefined;
+// }
+
+// function getSmallPet() {
+
+// }
+
+// let pet = getSmallPet()
+
+// if(isFish(pet)) {
+//   pet.swim()
+// } else {
+//   pet.fly()
+// }
+
+// const zoo: (fish | bird)[] = [getSmallPet(), getSmallPet, getSmallPet()]
+
+// const underwater1: fish[] = zoo.filter(isFish)
+
+// const underwater2: fish[] = zoo.filter(isFish) as fish[]
+
+
+// const underwater3: fish[] = zoo.filter((pet): pet as fish => {
+//   if(pet.name === sharky) return false;
+//   return isFish(pet)
+// } )
+
+
+// interface shape {
+//   kind: "circle" | "square";
+//   radius: "number" ;
+//   sideLength: "number";
+// }
+
+// function handleShape(shape: shape) {
+// if (shape.kind === "rect"){
+//   console.log('thisis not right')
+// }
+// }
+
+
+// function getArea(shape: shape) {
+// return Math.PI * shape.radius ** 2
+// }
+
+// function getArea2(shape: shape){
+//   if(shape.kind === "circle"){
+//     return Math.PI * shape.radius! ** 2
+//   }
+// }
+
+
+interface Circle {
+  kind: "circle"
+  radius: number
+}
+
+interface Square {
+  kind: "square"
+  sideLength: number
+}
+
+interface Triangle {
+  kind: "triangle"
+  sideLength: number
+
+}
+
+type Shape = Circle | Square | Triangle
+
+
+
+
+
+function getArea(shape: Shape){
+  if(shape.kind === "circle"){
+    return Math.PI * shape.radius ** 2
+  }
+}
+
+
+function getArea2(shape : Shape) {
+switch (shape.kind) {
+  case "circle":
+  return Math.PI * shape.radius ** 2;
+
+  case "square":
+  return shape.sideLength ** 2;
+
+  default: 
+  const _exhaustiveCheck: never = shape;
+  return _exhaustievCheck;
+}
+}
+
+
+

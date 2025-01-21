@@ -86,3 +86,146 @@ function configure(x) {
     console.log(x);
 }
 configure({ width: width });
+function doSomething(x) {
+    if (x === null) {
+        console.log("this is an error");
+    }
+    else {
+        console.log("hello", +x.toUpperCase());
+    }
+}
+function liveDangerously(x) {
+    console.log(x.toFixed());
+}
+var oneHundred = BigInt(100);
+var anotherHundred = 100n;
+// const firstName = symbol("name")
+// const secondName = symbol("name")
+// if(firstName === secondName) {
+// }
+// function padLeft(padding: number  | string, input: string): string{
+// if(padding === "number"){
+//    return "".repeat(padding) + input;
+// }
+// return padding + input;
+// }
+// function printAll(strs: string | string[] | null){
+// if(typeof strs === "object"){
+//     for(const s of strs){
+//         console.log(s)
+//     }
+// } else if (typeof strs === "string"){
+//     console.log(strs)
+// } else{
+//     return
+// }
+// }
+function getusersOnlineMessage(numUsersOnine) {
+    if (numUsersOnine === 0) {
+        return "we have ".concat(numUsersOnine, " users onine now");
+    }
+    else {
+        ("nobody's here :(");
+    }
+}
+function printAll(strs) {
+    if (strs && typeof strs === "object") {
+        for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
+            var s = strs_1[_i];
+            console.log(s);
+        }
+    }
+    else if (typeof strs === "string") {
+        console.log(strs);
+    }
+}
+function multiplyAll(values, factors) {
+    if (!value) {
+        return values;
+    }
+    else {
+        return values.map(function (x) { return x * factors; });
+    }
+}
+function example(x, y) {
+    if (x === y) {
+        x.toUpperCase();
+        y.toUpperCase();
+    }
+    else {
+        console.log(x);
+        console.log(y);
+    }
+}
+function PrintAll(strs) {
+    if (strs === null) {
+        if (typeof strs === "object") {
+            for (var _i = 0, strs_2 = strs; _i < strs_2.length; _i++) {
+                var s = strs_2[_i];
+                console.log(s);
+            }
+        }
+    }
+    else if (typeof strs === "string") {
+        console.log(strs);
+    }
+}
+function multiplyValue(container, factor) {
+    if (container.value !== null) {
+        console.log(container.value);
+        container.value *= factor;
+    }
+}
+function move(animal) {
+    if ("swim" in animal) {
+        return animal.swim();
+    }
+    else {
+        return animal.fly();
+    }
+}
+function logValue(x) {
+    if (x instanceof Date) {
+        console.log(x.toUTCString());
+    }
+}
+var x = Math.random() < 0.5 ? 10 : "hello world";
+x = 1;
+console.log(x);
+x = "hello world";
+console.log(x);
+function padLeft(padding, input) {
+    if (typeof padding === "number") {
+        return new Array(padding + 1).join("") + input;
+    }
+    return padding + input;
+}
+function example() {
+    var x;
+    x = Math.random() < 0.5;
+    if (Math.random() < 0.5) {
+        x = "hello";
+        console.log(x);
+    }
+    else {
+        x = 100;
+        console.log(x);
+    }
+    return x;
+}
+function getArea(shape) {
+    if (shape.kind === "circle") {
+        return Math.PI * Math.pow(shape.radius, 2);
+    }
+}
+function getArea2(shape) {
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * Math.pow(shape.radius, 2);
+        case "square":
+            return Math.pow(shape.sideLength, 2);
+        default:
+            var _exhaustiveCheck = shape;
+            return _exhaustievCheck;
+    }
+}
