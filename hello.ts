@@ -402,3 +402,144 @@ switch (shape.kind) {
 
 
 
+function greeter(fn: (a: string) => void) {
+fn("hello, world")
+}
+
+function printToConsole(s: string) {
+console.log(s)
+}
+
+greeter(printToConsole)
+
+
+type grettFunction() {
+  function greeter(fn: greetFunction)
+}
+
+
+type describableFunction() {
+  description: string;
+  (someArg: number): boolean;
+
+
+}
+
+function doSomething(fn: describableFunction){
+  console.log(fn.description + " returned " + fn(6));
+}
+
+function myFunction(someArg: number) {
+  return someArg > 3;
+ }
+
+ myFunction.desription = "takes a number and returns a boolean";
+
+ doSomething(myFunction)
+
+
+
+type someConstructor = {
+  new: (s: string) => someObject;
+}
+
+function fn(ctor: someConstructor){
+  return new ctor("hello")
+}
+
+
+interface callorConstructor {
+  (n? : number): string;
+  new(s: string); Date;
+
+}
+
+
+function fn(ctor: callorConstructor){
+  console.log(ctor(10));
+
+  console.log(new ctor("hello"));
+}
+
+fn(Date)
+
+
+function firstElement(arr: any[]){
+return arr[]
+}
+
+function firstElement<Type>(arr: Type[]): Type | undefined {
+return arr[0]
+}
+
+const s = firstElement([1,2,3])
+
+const n = firstElement(["a", "b", "c"])
+
+const u = firstElement([])
+
+
+function map<input,output>(arr: input[], func: (arg: input) => output ) {
+  turn arr.map(func)
+}
+
+const parsed = map(["1","2","3"], (n) => parseInt(n))
+
+
+
+function longest<Type extends{ length: number}>(a:Type, b: Type) {
+  if(a.length >= b.length){
+    return a;
+  } else{
+    return b;
+  }
+
+}
+
+
+
+const longerArray = longest([1,2], [1,2,3]);
+
+const longerString = longest("alice", "bob");
+
+const notOk = longest(10,100)
+
+
+function minimumLength<Type extends { length: number}>(obj: Type,minimum:number): Type {
+if(obj.length >= minimum){
+  return obj;
+} else {
+  return obj;
+}
+}
+
+const array = minimumLegth([1,2,3],6)
+
+console.log(array.slice(0))
+
+function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
+  return arr1.concat(arr2);
+}
+
+const arr = combine([1,2,3], [5,6,7]);
+
+
+const arr2 = combine([1,2,3], ["hello"])
+
+
+
+function firstElement<Type>(arr: Type[]) {
+  return arr[0];
+}
+
+
+function firstElement2<Type extends any[]>(arr: Type) {
+  return arr[0];
+}
+
+const a = firstElement([1,2,3]);
+
+const b = firstElement2([1,2,3]);
+
+const s = firstElement(["a","b","c"])
+

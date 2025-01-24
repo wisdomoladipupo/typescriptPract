@@ -131,8 +131,8 @@ function getusersOnlineMessage(numUsersOnine) {
 function printAll(strs) {
     if (strs && typeof strs === "object") {
         for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
-            var s = strs_1[_i];
-            console.log(s);
+            var s_1 = strs_1[_i];
+            console.log(s_1);
         }
     }
     else if (typeof strs === "string") {
@@ -161,8 +161,8 @@ function PrintAll(strs) {
     if (strs === null) {
         if (typeof strs === "object") {
             for (var _i = 0, strs_2 = strs; _i < strs_2.length; _i++) {
-                var s = strs_2[_i];
-                console.log(s);
+                var s_2 = strs_2[_i];
+                console.log(s_2);
             }
         }
     }
@@ -229,3 +229,75 @@ function getArea2(shape) {
             return _exhaustievCheck;
     }
 }
+function greeter(fn) {
+    fn("hello, world");
+}
+function printToConsole(s) {
+    console.log(s);
+}
+greeter(printToConsole);
+function doSomething(fn) {
+    console.log(fn.description + " returned " + fn(6));
+}
+function myFunction(someArg) {
+    return someArg > 3;
+}
+myFunction.desription = "takes a number and returns a boolean";
+doSomething(myFunction);
+function fn(ctor) {
+    return new ctor("hello");
+}
+function fn(ctor) {
+    console.log(ctor(10));
+    console.log(new ctor("hello"));
+}
+fn(Date);
+function firstElement(arr) {
+    return arr[];
+}
+function firstElement(arr) {
+    return arr[0];
+}
+var s = firstElement([1, 2, 3]);
+var n = firstElement(["a", "b", "c"]);
+var u = firstElement([]);
+function map(arr, func) {
+    turn;
+    arr.map(func);
+}
+var parsed = map(["1", "2", "3"], function (n) { return parseInt(n); });
+function longest(a, b) {
+    if (a.length >= b.length) {
+        return a;
+    }
+    else {
+        return b;
+    }
+}
+var longerArray = longest([1, 2], [1, 2, 3]);
+var longerString = longest("alice", "bob");
+var notOk = longest(10, 100);
+function minimumLength(obj, minimum) {
+    if (obj.length >= minimum) {
+        return obj;
+    }
+    else {
+        return obj;
+    }
+}
+var array = minimumLegth([1, 2, 3], 6);
+console.log(array.slice(0));
+function combine(arr1, arr2) {
+    return arr1.concat(arr2);
+}
+var arr = combine([1, 2, 3], [5, 6, 7]);
+var arr2 = combine([1, 2, 3], ["hello"]);
+function firstElement(arr) {
+    return arr[0];
+}
+function firstElement2(arr) {
+    return arr[0];
+}
+var a = firstElement([1, 2, 3]);
+var b = firstElement2([1, 2, 3]);
+var s = firstElement(["a", "b", "c"]);
