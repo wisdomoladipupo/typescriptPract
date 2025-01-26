@@ -543,3 +543,28 @@ const b = firstElement2([1,2,3]);
 
 const s = firstElement(["a","b","c"])
 
+
+function filter1<Type>(arr:Type[], func: (arg:Type) => Boolean):  Type[] {
+  return arr.filter(func);
+
+
+}
+
+
+
+function filter2<Type ,func extends (arg: Type) => boolean>(arr: Type[], func: func): Type[] {
+  return arr.filter(func);
+}
+
+function  greet<str extends string>(s: str) {
+  console.log("hello, " + s)
+}
+
+greet("world")
+
+
+function greet2(s: string){
+  console.log("hello" + s)
+}
+
+greet2("world")
