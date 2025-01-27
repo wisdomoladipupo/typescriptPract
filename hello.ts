@@ -568,3 +568,64 @@ function greet2(s: string){
 }
 
 greet2("world")
+
+
+function f(n: number) {
+  console.log(n.toFixed());
+  console.log(n.toFixed(3));
+}
+
+
+function myForEach(arr: any[], callback: (arg: any, index: number) => void) {
+  for (let i =0; i < arr.length; i++) {
+    callback(arr[i], i);
+  }
+}
+
+myForEach([1,2,3], (a) => console.log(a))
+myForEach([1,2,3], (a,i) => console.log(a,i))
+
+
+function myForEach2(arr: any[], callback:(arg: any, index?: number) => void) {
+  for(let i = 0; i < arr.length; i++) {
+    callback(arr[i])
+  }
+}
+
+myForEach2([1,2,3],(a,i) => {
+  console.log(i?.toFixed())
+})
+
+function makeDate(timestamp: number); Date;
+function makeDate(m: number, d: number, y: number); Date;
+function makeDate(mOrTimeStamp:number, d?: number, y?: number): Date {
+  if(d ! == undefined && y !== undefined) {
+    return new Date(y, mOrTimeStamp, d)
+  } else {
+    return new Date(mOrTimeStamp)
+  }
+} 
+
+const d1 = makeDate(12345678)
+const d2 =  makeDate(5,5)
+const d3 = makeDate(1,3)
+
+
+
+function fn(x: boolean): void; 
+
+function fn(x: string); void;
+
+
+function  fn (x: boolean) {}
+
+
+
+function fn(x: string): string;
+
+function fn(x: number): boolean;
+
+
+function fn(x: string | number) {
+  return "oops";
+}

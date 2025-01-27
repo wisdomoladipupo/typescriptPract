@@ -315,3 +315,40 @@ function greet2(s) {
     console.log("hello" + s);
 }
 greet2("world");
+function f(n) {
+    console.log(n.toFixed());
+    console.log(n.toFixed(3));
+}
+function myForEach(arr, callback) {
+    for (var i = 0; i < arr.length; i++) {
+        callback(arr[i], i);
+    }
+}
+myForEach([1, 2, 3], function (a) { return console.log(a); });
+myForEach([1, 2, 3], function (a, i) { return console.log(a, i); });
+function myForEach2(arr, callback) {
+    for (var i = 0; i < arr.length; i++) {
+        callback(arr[i]);
+    }
+}
+myForEach2([1, 2, 3], function (a, i) {
+    console.log(i === null || i === void 0 ? void 0 : i.toFixed());
+});
+Date;
+Date;
+function makeDate(mOrTimeStamp, d, y) {
+    if (d == undefined && y !== undefined) {
+        return new Date(y, mOrTimeStamp, d);
+    }
+    else {
+        return new Date(mOrTimeStamp);
+    }
+}
+var d1 = makeDate(12345678);
+var d2 = makeDate(5, 5);
+var d3 = makeDate(1, 3);
+void ;
+function fn(x) { }
+function fn(x) {
+    return "oops";
+}
