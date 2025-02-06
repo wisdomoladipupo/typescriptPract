@@ -629,3 +629,32 @@ function fn(x: number): boolean;
 function fn(x: string | number) {
   return "oops";
 }
+
+function len(s: string): number;
+function len(arr: any[]): number:
+function len(x: any) {
+  return  x.length;
+}
+
+
+len("")
+len([0])
+len(Math.random() > 0.5 ? "hello" : [0])
+
+
+function len(x: any[] | string) {
+  return x.length;
+}
+
+const user = {
+  id: 123,
+
+  Admin: false;
+  becomeAdmin: function () {
+    this.Admin = true
+  }
+}
+
+interface DB {
+  filterUsers(Filter: (this: user) )
+}

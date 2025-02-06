@@ -352,3 +352,9 @@ function fn(x) { }
 function fn(x) {
     return "oops";
 }
+function len(x) {
+    return x.length;
+}
+len("");
+len([0]);
+len(Math.random() > 0.5 ? "hello" : [0]);
