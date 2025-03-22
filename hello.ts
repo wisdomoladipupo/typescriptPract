@@ -658,3 +658,63 @@ const user = {
 interface DB {
   filterUsers(Filter: (this: user) )
 }
+
+const DB = getDB()
+const admins = DB.filterUsers(function(this: user) {
+  return this.admin
+})
+
+
+interface DB {
+  filterUsers(filter: (this: user) => boolean): usser[]
+}
+
+const DB = getDB()
+
+const admin = DB.filterUsers(function(this: users))
+
+function noop() {
+  return;
+}
+
+function f1(a: any){
+  a.b();
+}
+
+function f2(a:unknown){
+  a.b();
+}
+
+function safeParse(s: unknown){
+return JSON.parse(s)
+}
+
+
+function fail(msg: string
+): never {
+  throw new Error(msg)
+}
+
+
+function fn(x: string | number){
+  if( typeof x === "string"){
+    x.toUpperCase()
+  } else {
+    x.toFixed()
+  }
+  }
+
+  function doSomething(f: function) {
+    return f(1,2,3)
+  }
+
+  doSomething((a,b,c) => a + b + c)
+
+
+  function multiply(n: number, ...m: number[]) {
+return m.map((x) => n * x)
+  }
+
+  const a = multiply(10,1,2,3)
+
+  

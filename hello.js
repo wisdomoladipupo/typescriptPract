@@ -358,3 +358,54 @@ function len(x) {
 len("");
 len([0]);
 len(Math.random() > 0.5 ? "hello" : [0]);
+function len(x) {
+    return x.length;
+}
+var user = {
+    id: 123,
+    Admin: false,
+    becomeAdmin: function () {
+        this.Admin = true;
+    }
+};
+var DB = getDB();
+var admins = DB.filterUsers(function () {
+    return this.admin;
+});
+var DB = getDB();
+var admin = DB.filterUsers();
+function noop() {
+    return;
+}
+function f1(a) {
+    a.b();
+}
+function f2(a) {
+    a.b();
+}
+function safeParse(s) {
+    return JSON.parse(s);
+}
+function fail(msg) {
+    throw new Error(msg);
+}
+function fn(x) {
+    if (typeof x === "string") {
+        x.toUpperCase();
+    }
+    else {
+        x.toFixed();
+    }
+}
+function doSomething(f) {
+    return f(1, 2, 3);
+}
+doSomething(function (a, b, c) { return a + b + c; });
+function multiply(n) {
+    var m = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        m[_i - 1] = arguments[_i];
+    }
+    return m.map(function (x) { return n * x; });
+}
+var a = multiply(10, 1, 2, 3);
